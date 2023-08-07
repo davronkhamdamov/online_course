@@ -25,42 +25,47 @@ const Login = () => {
     setLoading(false)
   }
   return (
-    <>
-      <Card>
-        <Card.Body>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <h2 className="text-center mb-4">Log In</h2>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="email"
-                ref={emailRef}
-                placeholder="Your email"
-              />
-            </Form.Group>
-            <br />
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                ref={passwordRef}
-                placeholder="Your password"
-              />
-            </Form.Group>
-            <Button disabled={loading} className="w-100 mt-4" type="submit">
-              Log In
-            </Button>
-          </Form>
-          <div className="w-100 text-center mt-3">
-            <Link to="/forget-password">Forget Password</Link>
-          </div>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account?<Link to="/signup"> Sign Up</Link>
+    <div
+      className="d-flex align-items-center justify-content-center"
+      style={{ minHeight: "100vh" }}
+    >
+      <div style={{ width: "450px" }}>
+        <Card>
+          <Card.Body>
+            {error && <Alert variant="danger">{error}</Alert>}
+            <h2 className="text-center mb-4">Log In</h2>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group id="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  ref={emailRef}
+                  placeholder="Your email"
+                />
+              </Form.Group>
+              <br />
+              <Form.Group id="password">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  ref={passwordRef}
+                  placeholder="Your password"
+                />
+              </Form.Group>
+              <Button disabled={loading} className="w-100 mt-4" type="submit">
+                Log In
+              </Button>
+            </Form>
+            <div className="w-100 text-center mt-3">
+              <Link to="/forget-password">Forget Password</Link>
+            </div>
+          </Card.Body>
+        </Card>
+        <div className="w-100 text-center mt-2">
+          Need an account?<Link to="/signup"> Sign Up</Link>
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 

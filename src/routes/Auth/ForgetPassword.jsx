@@ -25,30 +25,35 @@ const ForgetPassword = () => {
     setLoading(false)
   }
   return (
-    <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Reset Password</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          {message && <Alert variant="success">{message}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef}></Form.Control>
-            </Form.Group>
-            <Button disabled={loading} className="w-100 mt-4" type="submit">
-              Reset Password
-            </Button>
-          </Form>
-          <div className="w-100 text-center mt-3">
-            <Link to="/login">Log In</Link>
-          </div>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account?<Link to="/signup"> Sign Up</Link>
+    <div
+      className="d-flex align-items-center justify-content-center"
+      style={{ minHeight: "100dvh" }}
+    >
+      <div style={{ width: "450px" }}>
+        <Card>
+          <Card.Body>
+            <h2 className="text-center mb-4">Reset Password</h2>
+            {error && <Alert variant="danger">{error}</Alert>}
+            {message && <Alert variant="success">{message}</Alert>}
+            <Form onSubmit={handleSubmit}>
+              <Form.Group id="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="email" ref={emailRef}></Form.Control>
+              </Form.Group>
+              <Button disabled={loading} className="w-100 mt-4" type="submit">
+                Reset Password
+              </Button>
+            </Form>
+            <div className="w-100 text-center mt-3">
+              <Link to="/login">Log In</Link>
+            </div>
+          </Card.Body>
+        </Card>
+        <div className="w-100 text-center mt-2">
+          Need an account?<Link to="/signup"> Sign Up</Link>
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 
