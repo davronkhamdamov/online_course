@@ -29,39 +29,53 @@ const Signup = () => {
     setLoading(false)
   }
   return (
-    <>
-      <Card>
-        <Card.Body>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <h2 className="text-center mb-4">Sign up</h2>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef}></Form.Control>
-            </Form.Group>
-            <br />
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef}></Form.Control>
-            </Form.Group>
-            <br />
-            <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
-              <Form.Control
-                type="password"
-                ref={password_confirmRef}
-              ></Form.Control>
-            </Form.Group>
-            <Button disabled={loading} className="w-100 mt-4" type="submit">
-              Sign Up
-            </Button>
-          </Form>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log in</Link>
+    <div
+      className="d-flex align-items-center justify-content-center"
+      style={{ minHeight: "100vh" }}
+    >
+      <div style={{ width: "450px" }}>
+        <Card>
+          <Card.Body>
+            {error && <Alert variant="danger">{error}</Alert>}
+            <h2 className="text-center mb-4">Sign up</h2>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group id="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  ref={emailRef}
+                  placeholder="Your email"
+                />
+              </Form.Group>
+              <br />
+              <Form.Group id="password">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  ref={passwordRef}
+                  placeholder="Your password"
+                />
+              </Form.Group>
+              <br />
+              <Form.Group id="password-confirm">
+                <Form.Label>Password Confirmation</Form.Label>
+                <Form.Control
+                  type="password"
+                  ref={password_confirmRef}
+                  placeholder="Confirm password"
+                />
+              </Form.Group>
+              <Button disabled={loading} className="w-100 mt-4" type="submit">
+                Sign Up
+              </Button>
+            </Form>
+          </Card.Body>
+        </Card>
+        <div className="w-100 text-center mt-2">
+          Already have an account? <Link to="/login">Log in</Link>
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 
