@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+header{
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 2px 40px rgba(0,0,0,0.4);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.icon_text{
+    font-size: 25px;
+    font-family:"Ubuntu", sans-serif;
+    margin-top: 13px;
+}
+.searchWrapper{
+    max-width: 900px;
+    width: 100%;
+}
+.searchWrapper input{
+    width: 100%;
+    height: 45px;
+    padding: 0 25px 3px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    background: rgba(0,0,0,0.1);
+}
+.authWrapper{
+    width: 300px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.authWrapper button{
+    width: 80px;
+    border: none;
+    color: white;
+    background: #3b3bff;
+    border-radius: 2px;
+}
+.authWrapper button:last-child {
+    background: #eee;
+    color: black;
+}
+.categories{
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    padding-top: 6px;
+    border-radius: 10px;
+}
+
+.categories:hover{
+    background: #eee;
+}
