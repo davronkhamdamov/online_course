@@ -1,7 +1,11 @@
 import "./Header.css"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { IoMdOpen } from "react-icons/io"
 const Header = () => {
+  const location = useLocation()
+  if (["/login", "/signup", "/forget-password"].includes(location.pathname)) {
+    return
+  }
   return (
     <header>
       <div className="d-flex align-items-center gap-4 w-75">
