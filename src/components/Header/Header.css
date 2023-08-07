@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
 header{
     width: 100%;
     height: 70px;
@@ -12,6 +11,7 @@ header{
     font-size: 25px;
     font-family:"Ubuntu", sans-serif;
     margin-top: 13px;
+    cursor: pointer;
 }
 .searchWrapper{
     max-width: 900px;
@@ -33,25 +33,43 @@ header{
     justify-content: center;
     gap: 20px;
 }
-.authWrapper button{
+.authWrapper a{
     width: 80px;
     border: none;
     color: white;
     background: #3b3bff;
-    border-radius: 2px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
-.authWrapper button:last-child {
-    background: #eee;
+.authWrapper a:last-child {
+    background: #ccc;
     color: black;
 }
 .categories{
     width: 100px;
-    height: 40px;
+    height: 70px;
     text-align: center;
-    padding-top: 6px;
-    border-radius: 10px;
+    padding-top: 13px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
-
-.categories:hover{
-    background: #eee;
+.categories:hover .dropDawnCategories{
+    display: flex;
+}
+.dropDawnCategories{
+    width: 300px;
+    height: 500px;
+    position: absolute;
+    background: white;
+    left: -5px;
+    box-shadow: 0 0 10px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 10px;
+    top: 70px;
+    display: none;
 }
