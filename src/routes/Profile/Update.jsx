@@ -51,7 +51,8 @@ const UpdateProfile = () => {
                 type="email"
                 ref={emailRef}
                 defaultValue={currentUser.email}
-              ></Form.Control>
+                placeholder="Your email"
+              />
             </Form.Group>
             <br />
             <Form.Group id="password">
@@ -60,7 +61,7 @@ const UpdateProfile = () => {
                 type="password"
                 ref={passwordRef}
                 placeholder="Leave blankto keep the same"
-              ></Form.Control>
+              />
             </Form.Group>
             <br />
             <Form.Group id="password-confirm">
@@ -69,7 +70,7 @@ const UpdateProfile = () => {
                 type="password"
                 ref={password_confirmRef}
                 placeholder="Leave blankto keep the same"
-              ></Form.Control>
+              />
             </Form.Group>
             <Button disabled={loading} className="w-100 mt-4" type="submit">
               Update

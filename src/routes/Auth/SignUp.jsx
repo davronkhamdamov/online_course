@@ -37,12 +37,20 @@ const Signup = () => {
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef}></Form.Control>
+              <Form.Control
+                type="email"
+                ref={emailRef}
+                placeholder="Your email"
+              />
             </Form.Group>
             <br />
             <Form.Group id="password">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef}></Form.Control>
+              <Form.Control
+                type="password"
+                ref={passwordRef}
+                placeholder="Your password"
+              />
             </Form.Group>
             <br />
             <Form.Group id="password-confirm">
@@ -50,7 +58,8 @@ const Signup = () => {
               <Form.Control
                 type="password"
                 ref={password_confirmRef}
-              ></Form.Control>
+                placeholder="Confirm password"
+              />
             </Form.Group>
             <Button disabled={loading} className="w-100 mt-4" type="submit">
               Sign Up
