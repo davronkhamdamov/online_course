@@ -17,7 +17,25 @@ const Login = () => {
     try {
       setError("")
       setLoading(true)
-      await login(emailRef.current.value, passwordRef.current.value)
+      const user = await login(
+        emailRef.current.value,
+        passwordRef.current.value
+      )
+      fetch("http://localhost:3000/user/login", {
+        method: "POST",
+        body: JSON.stringify({
+          email: emailRef.current.value,
+          username: "davron",
+          user_id: user.user.uid
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data)
+        })
       navigate("/")
     } catch (error) {
       setError("Failed to log in")
