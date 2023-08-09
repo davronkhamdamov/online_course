@@ -44,7 +44,7 @@ const Header = () => {
       </div>
       {currentUser ? (
         <Dropdown>
-          <Dropdown.Toggle>{currentUser.email} </Dropdown.Toggle>
+          <Dropdown.Toggle>{localStorage.getItem("username")} </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item href="/profile">Profile</Dropdown.Item>
             <Dropdown.Item onClick={logout}>Log out</Dropdown.Item>

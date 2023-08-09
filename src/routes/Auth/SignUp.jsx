@@ -40,6 +40,7 @@ const Signup = () => {
       })
         .then((res) => res.json())
         .then((data) => {
+          localStorage.setItem("username", data.username)
           navigate("/")
         })
     } catch (error) {

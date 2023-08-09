@@ -25,7 +25,6 @@ const Login = () => {
         method: "POST",
         body: JSON.stringify({
           email: emailRef.current.value,
-          username: "davron",
           user_id: user.user.uid
         }),
         headers: {
@@ -35,8 +34,9 @@ const Login = () => {
         .then((res) => res.json())
         .then((data) => {
           console.log(data)
+          localStorage.setItem("username", data.username)
+          navigate("/")
         })
-      navigate("/")
     } catch (error) {
       setError("Failed to log in")
     }
