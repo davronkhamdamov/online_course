@@ -21,7 +21,7 @@
   font-size: 18px;
 }
 .course_img img {
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 10px;
 }
 .rating_title {
@@ -45,12 +45,11 @@
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.3),
     rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0.1)
   );
   border-radius: 10px;
-  backdrop-filter: blur(3px);
 }
 .course_img button {
   width: 65px;

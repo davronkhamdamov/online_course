@@ -77,10 +77,10 @@ const CourseDetails = () => {
         <div className="course_right">
           <div className="course_img">
             <img
-              src="https://picsum.photos/350/250"
+              src="https://img-c.udemycdn.com/course/240x135/2776760_f176_10.jpg"
               alt=""
               width="350"
-              height="250"
+              height="200"
             />
             <button className="course_preview_icon">
               <BsPlay color="#eee" fontSize="30px" />
