@@ -8,6 +8,7 @@ const UpdateProfile = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
   const password_confirmRef = useRef()
+  const usernameRef = useRef()
   const { currentUser, updateEmail, updatePassword } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
@@ -41,7 +42,7 @@ const UpdateProfile = () => {
   return (
     <div
       className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100dvh" }}
+      style={{ minHeight: "80dvh" }}
     >
       <div style={{ width: "450px" }}>
         <Card>
@@ -56,6 +57,16 @@ const UpdateProfile = () => {
                   ref={emailRef}
                   defaultValue={currentUser.email}
                   placeholder="Your email"
+                />
+              </Form.Group>
+              <br />
+              <Form.Group>
+                <Form.Label>Username</Form.Label>
+                <Form.Control
+                  type="text"
+                  ref={usernameRef}
+                  defaultValue={localStorage.getItem("username")}
+                  placeholder="Your Username"
                 />
               </Form.Group>
               <br />

@@ -8,6 +8,7 @@ const Signup = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
   const password_confirmRef = useRef()
+  const usernameRef = useRef()
   const { signup } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
@@ -18,11 +19,30 @@ const Signup = () => {
     if (password_confirmRef.current.value !== passwordRef.current.value) {
       return setError("Passwords do not match")
     }
+    if (!usernameRef.current.value) return setError("Username is required")
     try {
       setError("")
       setLoading(true)
-      await signup(emailRef.current.value, passwordRef.current.value)
-      navigate("/")
+      const user = await signup(
+        emailRef.current.value,
+        passwordRef.current.value
+      )
+      fetch("http://localhost:3000/user/register", {
+        method: "POST",
+        body: JSON.stringify({
+          email: emailRef.current.value,
+          username: usernameRef.current.value,
+          user_id: user.user.uid
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          localStorage.setItem("username", data.username)
+          navigate("/")
+        })
     } catch (error) {
       setError("Failed to create an account")
     }
@@ -45,6 +65,15 @@ const Signup = () => {
                   type="email"
                   ref={emailRef}
                   placeholder="Your email"
+                />
+              </Form.Group>
+              <br />
+              <Form.Group id="password">
+                <Form.Label>Username</Form.Label>
+                <Form.Control
+                  type="text"
+                  ref={usernameRef}
+                  placeholder="Your username"
                 />
               </Form.Group>
               <br />

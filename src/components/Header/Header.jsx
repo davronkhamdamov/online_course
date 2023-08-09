@@ -1,7 +1,14 @@
 import "./Header.css"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { IoMdOpen } from "react-icons/io"
+import { useAuth } from "./../../context/Auth.context"
+import Dropdown from "react-bootstrap/Dropdown"
 const Header = () => {
+  const location = useLocation()
+  const { currentUser, logout } = useAuth()
+  if (["/login", "/signup", "/forget-password"].includes(location.pathname)) {
+    return
+  }
   return (
     <header>
       <div className="d-flex align-items-center gap-4 w-75">
@@ -15,6 +22,7 @@ const Header = () => {
               {new Array(10).fill("#").map((e, i) => {
                 return (
                   <div
+                    key={i}
                     className="d-flex justify-content-between align-items-center"
                     style={{
                       minWidth: "270px",
@@ -31,13 +39,23 @@ const Header = () => {
           </div>
         </div>
         <div className="searchWrapper">
-          <input type="text" placeholder="Search anything" />
+          <input type="search" placeholder="Search anything" />
         </div>
       </div>
-      <div className="authWrapper">
-        <Link to="/login">Login</Link>
-        <Link to="/signup">Sign Up</Link>
-      </div>
+      {currentUser ? (
+        <Dropdown>
+          <Dropdown.Toggle>{localStorage.getItem("username")} </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item href="/profile">Profile</Dropdown.Item>
+            <Dropdown.Item onClick={logout}>Log out</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      ) : (
+        <div className="authWrapper">
+          <Link to="/login">Login</Link>
+          <Link to="/signup">Sign Up</Link>
+        </div>
+      )}
     </header>
   )
 }
