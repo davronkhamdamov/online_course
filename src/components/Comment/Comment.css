@@ -1,0 +1,49 @@
+.comment_item {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  min-height: 200px;
+}
+
+.user_profile {
+  width: 50px;
+  height: 50px;
+  background: black;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 17px;
+}
+.comment_user_name {
+  font-weight: 600;
+  margin: 0;
+  font-size: 15px;
+  line-height: 20px;
+}
+.moreButton {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 5px;
+  outline: none;
+}
+.moreButton:hover {
+  background: #f2f2f2;
+}
+.comment_like_btn {
+  display: flex;
+  gap: 10px;
+}
+.comment_like_btn button {
+  width: 30px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+}
