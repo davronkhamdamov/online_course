@@ -39,7 +39,7 @@ const Header = () => {
           </div>
         </div>
         <div className="searchWrapper">
-          <input type="text" placeholder="Search anything" />
+          <input type="search" placeholder="Search anything" />
         </div>
       </div>
       {currentUser ? (
