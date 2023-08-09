@@ -1,13 +1,11 @@
 .course_details_wrapper {
   max-width: 1300px;
   width: 100%;
-  margin: 0 auto;
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
   box-shadow: 0 0 20px 1px #00000021;
   padding: 40px;
-  padding-bottom: 10px;
   border-radius: 10px;
 }
 .course_heading {
@@ -15,7 +13,7 @@
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 .course_heading p {
   font-size: 18px;
