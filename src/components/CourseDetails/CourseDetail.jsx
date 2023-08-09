@@ -35,7 +35,7 @@ const CourseDetail = () => {
           <div className="d-flex align-items-center gap-2">
             <FaUserGraduate />
             <p className="m-0">
-              Created by <Link> Davron</Link>
+              Created by <Link> Dr. Angela Yu</Link>
             </p>
           </div>
           <div className="d-flex align-items-center gap-2">

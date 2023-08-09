@@ -1,0 +1,10 @@
+.requirement_list {
+  font-size: 20px;
+}
+.comment_wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  gap: 40px;
+}
