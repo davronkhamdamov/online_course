@@ -1,0 +1,38 @@
+.heading {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.heading_text {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translateY(-50%);
+  background: #fff;
+}
+.instructorWrapper {
+  max-width: 500px;
+  width: 100%;
+}
+
+.instructorWrapper p {
+  font-size: 18px;
+  font-weight: 500;
+}
+.instructorWrapper h2 {
+  font-size: 40px;
+  font-weight: 600;
+}
+.instructorWrapper button {
+  width: max-content;
+  padding: 10px 20px;
+  background: #111;
+  border: none;
+  font-size: 17px;
+  font-weight: 500;
+  color: white;
+}
